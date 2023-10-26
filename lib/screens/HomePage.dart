@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/AuthServices/Authentication.dart';
-import 'package:flutter_application_4/youtube_playlists.dart/BCA.dart';
+import 'package:flutter_application_4/hanging_widgets/BCA.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,7 +14,6 @@ import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
-
   @override
   State<Homepage> createState() => _HomepageState();
 }
@@ -47,7 +46,6 @@ class _HomepageState extends State<Homepage> {
   }
 
   final Authentication auth = Authentication();
-
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User?>(context);
@@ -56,8 +54,11 @@ class _HomepageState extends State<Homepage> {
         builder: (context, snapshot) {
           // final course = snapshot.data?.get("course") ?? "(No Details)";
           return SingleChildScrollView(
+            clipBehavior: Clip.antiAlias,
+            scrollDirection: Axis.vertical,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   CarouselSlider(
                     options: CarouselOptions(
@@ -84,55 +85,64 @@ class _HomepageState extends State<Homepage> {
                       .make()
                       .px24(),
                   HeightBox(10),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          _launchurl(
-                              "www.instagram.com/mmdumullana/?igshid=YmMyMTA2M2Y%3D");
-                        },
-                        child: Image.asset(
-                          "assets/instagram.png",
-                          height: 30,
-                          width: 30,
-                        ),
+                  Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Vx.red300,
+                        borderRadius: BorderRadius.circular(15),
                       ),
-                      InkWell(
-                        onTap: () {
-                          _launchurl("www.facebook.com/MMDUMullana/");
-                        },
-                        child: Image.asset(
-                          "assets/facebook.jpg",
-                          height: 45,
-                          width: 45,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          _launchurl(
-                              "www.linkedin.com/school/maharishi-markandeshwar-university-mullana");
-                        },
-                        child: Image.asset(
-                          "assets/linkedin.png",
-                          height: 34,
-                          width: 33,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          _launchurl(
-                              "www.youtube.com/MaharishiMarkandeshwarUniversityMullana");
-                        },
-                        child: Image.asset(
-                          "assets/youtube.png",
-                          height: 35,
-                          width: 37,
-                        ),
-                      ),
-                    ],
-                  ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              _launchurl(
+                                  "www.instagram.com/mmdumullana/?igshid=YmMyMTA2M2Y%3D");
+                            },
+                            child: Image.asset(
+                              "assets/instagram.png",
+                              height: 39,
+                              width: 39,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              _launchurl("www.facebook.com/MMDUMullana/");
+                            },
+                            child: Image.asset(
+                              "assets/facebook.png",
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              _launchurl(
+                                  "www.linkedin.com/school/maharishi-markandeshwar-university-mullana");
+                            },
+                            child: Image.asset(
+                              "assets/linkedin.png",
+                              height: 45,
+                              width: 45,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              _launchurl(
+                                  "www.youtube.com/MaharishiMarkandeshwarUniversityMullana");
+                            },
+                            child: Image.asset(
+                              "assets/youtube.png",
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                        ],
+                      ).pOnly(
+                        top: 7,
+                        bottom: 7,
+                      )).px12(),
                   bcaYT(),
                 ]),
           );

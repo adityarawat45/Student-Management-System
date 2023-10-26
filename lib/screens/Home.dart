@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     const Session(),
     const Community(),
   ];
-  dynamic _currentindex = 0;
+  dynamic _currentindex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +41,20 @@ class _HomeState extends State<Home> {
           actions: [
             InkWell(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
                       backgroundColor: Vx.white,
-                      content: Text(
+                      content: const Text(
                         "No Notifications to show",
                         style: TextStyle(color: Vx.black, fontSize: 14),
-                      )));
+                      ),
+                      behavior: SnackBarBehavior.floating,
+                      margin: const EdgeInsets.only(bottom: 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                  );
                 },
                 child: const Icon(Icons.notifications_active_outlined).px12()),
           ],
@@ -54,17 +62,18 @@ class _HomeState extends State<Home> {
         drawer: const HomeDrawer(),
         body: Screens[_currentindex],
         bottomNavigationBar: CurvedNavigationBar(
+          height: 55,
           animationCurve: Curves.decelerate,
           animationDuration: const Duration(milliseconds: 500),
           buttonBackgroundColor: Vx.red500,
-          backgroundColor: Vx.white,
-          color: Vx.red500,
+          backgroundColor: Colors.transparent,
+          color: const Color.fromARGB(255, 217, 45, 45),
           items: const [
             CurvedNavigationBarItem(
                 child: Icon(
                   Icons.home_rounded,
                   color: Vx.white,
-                  size: 30,
+                  size: 23,
                 ),
                 label: 'Home',
                 labelStyle: TextStyle(color: Vx.white)),
@@ -72,7 +81,7 @@ class _HomeState extends State<Home> {
                 child: Icon(
                   CupertinoIcons.table,
                   color: Vx.white,
-                  size: 30,
+                  size: 23,
                 ),
                 label: 'Attendence',
                 labelStyle: TextStyle(color: Vx.white)),
@@ -80,7 +89,7 @@ class _HomeState extends State<Home> {
                 child: Icon(
                   Icons.calendar_month_rounded,
                   color: Vx.white,
-                  size: 30,
+                  size: 23,
                 ),
                 label: 'Session',
                 labelStyle: TextStyle(color: Vx.white)),
@@ -88,7 +97,7 @@ class _HomeState extends State<Home> {
                 child: Icon(
                   Icons.people_alt_rounded,
                   color: Vx.white,
-                  size: 30,
+                  size: 23,
                 ),
                 label: 'Community',
                 labelStyle: TextStyle(color: Vx.white)),

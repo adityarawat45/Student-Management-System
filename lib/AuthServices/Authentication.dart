@@ -1,18 +1,13 @@
 // ignore_for_file: non_constant_identifier_names, file_names, avoid_print
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 // import 'package:flutter_application_4/AuthServices/database.dart';
-
 class Authentication {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
   Stream<User?> get user {
     return _auth.authStateChanges().map((User? user) => user);
   }
-
   Future UserRegistrationEmail(String email, String password) async {
     try {
       UserCredential userCredential =
@@ -25,11 +20,11 @@ class Authentication {
       // .updateUserData("0", "none", "none", "none", "0");
 
       await _firestore.collection('Student').doc(userCredential.user?.uid).set({
-        'name': "None",
-        'rollNo': "0",
-        'course': "None",
-        'section': "None",
-        'semester': "0",
+        'name': "",
+        'rollNo': "",
+        'course': "",
+        'section': "",
+        'semester': "",
       });
 
       return userCredential.user?.uid;
