@@ -44,6 +44,7 @@ dependencies:
   firebase_core: ^2.15.0
   cloud_firestore: ^4.8.4
   velocity_x: ^4.1.1
+  syncfusion_flutter_pdfviewer: ^23.1.42
   provider: ^6.0.5
   google_fonts: ^5.1.0
   flutter_spinkit: ^5.2.0
@@ -76,8 +77,10 @@ flutter:
   assets:
     - assets/
     - assets/session/
+    - assets/syllabus/
     - assets/attendence/
     - assets/ytimages/
+    - assets/schedule/
     
   #   - images/a_dot_ham.jpeg
 

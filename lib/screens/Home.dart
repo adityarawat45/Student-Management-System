@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     const Session(),
     const Community(),
   ];
-  dynamic _currentindex = 1;
+  dynamic _currentindex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

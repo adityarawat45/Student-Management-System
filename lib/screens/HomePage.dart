@@ -88,7 +88,7 @@ class _HomepageState extends State<Homepage> {
                   Container(
                       height: 60,
                       decoration: BoxDecoration(
-                        color: Vx.red300,
+                        color: Vx.blue400,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Row(

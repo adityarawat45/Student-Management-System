@@ -13,7 +13,6 @@ class Attendencepg extends StatefulWidget {
   @override
   State<Attendencepg> createState() => _AttendencepgState();
 }
-
 class _AttendencepgState extends State<Attendencepg> {
   final Authentication auth = Authentication();
   @override
@@ -72,7 +71,7 @@ class _AttendencepgState extends State<Attendencepg> {
                         Image.asset("assets/attendence/attendance.png",height: 95,width: 70,),
                                 ],
                               ),
-                      ).px16().py16(),
+                      ).px12().py12(),
                         ],
                       ),
                   ).p16(),
@@ -91,7 +90,7 @@ class _AttendencepgState extends State<Attendencepg> {
                           children: [
                           Container(
                       height: 150,
-                      width: 145,
+                      width: 130,
                       decoration: BoxDecoration(
                           color: Vx.blue400,
                           borderRadius: BorderRadius.circular(20)),
@@ -113,10 +112,10 @@ class _AttendencepgState extends State<Attendencepg> {
                               .make()
                               .pOnly(bottom: 5),
                         ],
-                      ),).px20().py12(),
+                      ),).px12().py12(),
                                     Container(
                       height: 150,
-                      width: 145,
+                      width: 130,
                       decoration: BoxDecoration(
                           color: Vx.blue400,
                           borderRadius: BorderRadius.circular(20)),
@@ -139,7 +138,7 @@ class _AttendencepgState extends State<Attendencepg> {
                               .pOnly(bottom: 5),
                            ],
                           ),
-                        ).px20().py12(),
+                        ).px12().py12(),
                        ],
                       ),
                       ],).pOnly(bottom: 10),
