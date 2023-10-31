@@ -22,7 +22,7 @@ class _HolidaysState extends State<Holidays> {
         decoration: const BoxDecoration(
           color: Vx.white,
         ),
-        child : Card(shape: const RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(180),bottomStart: Radius.circular(180),topEnd: Radius.circular(30),topStart: Radius.circular(30))),
+        child : Card(shape: const RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(180),bottomStart: Radius.circular(180),topEnd: Radius.circular(30),topStart: Radius.circular(30)),),
         color:  const Color.fromARGB(255, 217, 45, 45),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/AuthServices/Authentication.dart';
-import 'package:flutter_application_4/ontapscreens/fees.dart';
+import 'package:flutter_application_4/screens/wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,6 @@ void main() async {
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
   @override
@@ -25,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       value: Authentication().user,
       initialData: null,
       child: MaterialApp(
-        home: const Fees(),
+        home: const  wrapper(),
         theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),

@@ -3,6 +3,7 @@ import 'package:flutter_application_4/ontapscreens/dmc.dart';
 import 'package:flutter_application_4/ontapscreens/examform.dart';
 import 'package:flutter_application_4/ontapscreens/fees.dart';
 import 'package:flutter_application_4/ontapscreens/holidays.dart';
+import 'package:flutter_application_4/ontapscreens/report.dart';
 import 'package:flutter_application_4/ontapscreens/schedule.dart';
 import 'package:flutter_application_4/ontapscreens/syllabus.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,19 @@ class Session extends StatefulWidget {
 }
 
 class _SessionState extends State<Session> {
+  void _showModalBottom(context) {
+    showModalBottomSheet(
+        backgroundColor: Vx.blue500,
+        context: context,
+        elevation: 2.0,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+        builder: (BuildContext context) {
+          return const Settinsform();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -276,21 +290,25 @@ class _SessionState extends State<Session> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton.icon(
-                style: ButtonStyle(
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                    alignment: Alignment.center),
-                onPressed: () {},
-                label: "Report issue"
-                    .text
-                    .semiBold
-                    .textStyle(GoogleFonts.tiltNeon())
-                    .make(),
-                icon: Image.asset(
-                  "assets/session/think.png",
-                  height: 25,
-                  width: 20,
+              InkWell(
+                child: ElevatedButton.icon(
+                  style: ButtonStyle(
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                      alignment: Alignment.center),
+                  onPressed: () {
+                    return _showModalBottom(context);
+                  },
+                  label: "Report issue"
+                      .text
+                      .semiBold
+                      .textStyle(GoogleFonts.tiltNeon())
+                      .make(),
+                  icon: Image.asset(
+                    "assets/session/think.png",
+                    height: 25,
+                    width: 20,
+                  ),
                 ),
               ),
             ],
