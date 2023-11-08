@@ -4,9 +4,8 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class PDFScreen extends StatefulWidget {
-   final String filePath;
-  const PDFScreen({required this.filePath,super.key});
-  
+  final String filePath;
+  const PDFScreen({required this.filePath, super.key});
 
   @override
   State<PDFScreen> createState() => _PDFScreenState();
@@ -19,23 +18,29 @@ class _PDFScreenState extends State<PDFScreen> {
     _pdfViewerController = PdfViewerController();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.shadowColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-        title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+        backgroundColor: context.theme.secondaryHeaderColor,
+        title: "MMDU"
+            .text
+            .xl4
+            .color(context.theme.hintColor)
+            .textStyle(GoogleFonts.lilitaOne())
+            .make(),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          color: Vx.red500,
+        decoration: const BoxDecoration(),
+        child: SfPdfViewer.asset(
+          widget.filePath,
+          scrollDirection: PdfScrollDirection.vertical,
+          enableDoubleTapZooming: true,
+          controller: _pdfViewerController,
         ),
-        child: SfPdfViewer.asset(widget.filePath,
-        scrollDirection: PdfScrollDirection.vertical,
-        enableDoubleTapZooming: true,
-        controller: _pdfViewerController,
-      ),
       ),
     );
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/ontapscreens/dmc.dart';
 import 'package:flutter_application_4/ontapscreens/examform.dart';
@@ -46,7 +48,7 @@ class _SessionState extends State<Session> {
               height: 120,
               width: 370,
               decoration: BoxDecoration(
-                color: Vx.red500,
+                color: context.theme.hoverColor,
                 borderRadius: BorderRadius.circular(18),
               ),
               child: Row(
@@ -58,7 +60,7 @@ class _SessionState extends State<Session> {
                     children: [
                       "Exam Form"
                           .text
-                          .color(Vx.white)
+                          .color(context.theme.hintColor)
                           .size(25)
                           .bold
                           .textStyle(GoogleFonts.tiltNeon())
@@ -66,7 +68,7 @@ class _SessionState extends State<Session> {
                           .pOnly(top: 18),
                       "Click to see more details \nrelated to your exams form"
                           .text
-                          .color(Vx.gray100)
+                          .color(context.theme.hintColor)
                           .size(15)
                           .semiBold
                           .textStyle(GoogleFonts.tiltNeon())
@@ -88,7 +90,7 @@ class _SessionState extends State<Session> {
               height: 120,
               width: 370,
               decoration: BoxDecoration(
-                color: Vx.yellow400,
+                color: context.cardColor,
                 borderRadius: BorderRadius.circular(18),
               ),
               child: Row(
@@ -100,7 +102,7 @@ class _SessionState extends State<Session> {
                     children: [
                       "Syllabus"
                           .text
-                          .color(Vx.white)
+                          .color(context.theme.hintColor)
                           .size(25)
                           .bold
                           .textStyle(GoogleFonts.tiltNeon())
@@ -108,7 +110,7 @@ class _SessionState extends State<Session> {
                           .pOnly(top: 18),
                       "Syllabus for current session\nand other sessions"
                           .text
-                          .color(Vx.gray100)
+                          .color(context.theme.hintColor)
                           .size(15)
                           .semiBold
                           .textStyle(GoogleFonts.tiltNeon())
@@ -124,7 +126,7 @@ class _SessionState extends State<Session> {
           const HeightBox(10),
           "Get your fee status\non your fingertips with ease!!"
               .text
-              .color(Vx.red500)
+              .color(context.primaryColor)
               .size(30)
               .textStyle(GoogleFonts.lilitaOne())
               .make()
@@ -134,7 +136,7 @@ class _SessionState extends State<Session> {
             elevation: 2,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            color: Vx.blue100,
+            color: context.theme.selectedRowColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -149,7 +151,7 @@ class _SessionState extends State<Session> {
                     height: 120,
                     width: 130,
                     decoration: BoxDecoration(
-                        color: Vx.blue400,
+                        color: context.canvasColor,
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -162,7 +164,7 @@ class _SessionState extends State<Session> {
                         ),
                         "Schedule"
                             .text
-                            .color(Vx.white)
+                            .color(context.theme.hintColor)
                             .size(18)
                             .bold
                             .textStyle(GoogleFonts.tiltNeon())
@@ -181,7 +183,7 @@ class _SessionState extends State<Session> {
                     height: 120,
                     width: 130,
                     decoration: BoxDecoration(
-                        color: Vx.blue400,
+                        color: context.canvasColor,
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -194,7 +196,7 @@ class _SessionState extends State<Session> {
                         ),
                         "Fees"
                             .text
-                            .color(Vx.white)
+                            .color(context.theme.hintColor)
                             .size(18)
                             .bold
                             .textStyle(GoogleFonts.tiltNeon())
@@ -212,7 +214,7 @@ class _SessionState extends State<Session> {
             elevation: 2,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            color: Vx.blue100,
+            color: context.theme.selectedRowColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -227,7 +229,7 @@ class _SessionState extends State<Session> {
                     height: 120,
                     width: 130,
                     decoration: BoxDecoration(
-                        color: Vx.blue400,
+                        color: context.canvasColor,
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -240,7 +242,7 @@ class _SessionState extends State<Session> {
                         ),
                         "Holidays list"
                             .text
-                            .color(Vx.white)
+                            .color(context.theme.hintColor)
                             .size(18)
                             .bold
                             .textStyle(GoogleFonts.tiltNeon())
@@ -259,7 +261,7 @@ class _SessionState extends State<Session> {
                     height: 120,
                     width: 130,
                     decoration: BoxDecoration(
-                        color: Vx.blue400,
+                        color: context.canvasColor,
                         borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -272,7 +274,7 @@ class _SessionState extends State<Session> {
                         ),
                         "DMC"
                             .text
-                            .color(Vx.white)
+                            .color(context.theme.hintColor)
                             .size(18)
                             .bold
                             .textStyle(GoogleFonts.tiltNeon())
@@ -293,6 +295,7 @@ class _SessionState extends State<Session> {
               InkWell(
                 child: ElevatedButton.icon(
                   style: ButtonStyle(
+                    
                       shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15))),
                       alignment: Alignment.center),
@@ -301,6 +304,7 @@ class _SessionState extends State<Session> {
                   },
                   label: "Report issue"
                       .text
+                      .color(context.theme.hintColor)
                       .semiBold
                       .textStyle(GoogleFonts.tiltNeon())
                       .make(),

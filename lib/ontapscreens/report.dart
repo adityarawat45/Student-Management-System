@@ -16,8 +16,10 @@ class _SettinsformState extends State<Settinsform> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       height: 500,
       decoration: const BoxDecoration(
+        
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30), topRight: Radius.circular(30)),
       ),

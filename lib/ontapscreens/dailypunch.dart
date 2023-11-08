@@ -12,16 +12,17 @@ class _DailypunchState extends State<Dailypunch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.shadowColor,
       appBar: AppBar(
         elevation: 0.0,
-          backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-          title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+          backgroundColor: context.theme.secondaryHeaderColor,
+          title: "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),
       ),
       body: Container(
         height: 700,
-        color: Vx.white,
+        color: context.theme.shadowColor,
         child: Card(
-          color: Vx.blue500,
+          color: context.canvasColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
          child: 
          SingleChildScrollView(
@@ -31,7 +32,7 @@ class _DailypunchState extends State<Dailypunch> {
               children: [
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -60,7 +61,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -93,7 +94,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -122,7 +123,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -159,7 +160,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -192,7 +193,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
@@ -221,7 +222,7 @@ class _DailypunchState extends State<Dailypunch> {
                 ).p12(),
                 Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  color: Vx.red400,
+                  color: context.primaryColor,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(

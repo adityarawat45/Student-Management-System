@@ -15,10 +15,11 @@ class _AttendanceState extends State<Attendance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.shadowColor,
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-          title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+          backgroundColor: context.theme.secondaryHeaderColor,
+          title: "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,6 +30,7 @@ class _AttendanceState extends State<Attendance> {
                 .text
                 .xl4
                 .extraBold
+                .color(context.primaryColor)
                 .textStyle(GoogleFonts.tiltNeon())
                 .makeCentered(),
             const HeightBox(10),
@@ -36,7 +38,7 @@ class _AttendanceState extends State<Attendance> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
-              color: Vx.yellow400,
+              color: context.cardColor,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -45,9 +47,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration: BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -73,9 +75,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration:  BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius:const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -101,9 +103,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration:  BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -129,9 +131,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.green500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration:  BoxDecoration(
+                              color: context.theme.indicatorColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -157,9 +159,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration:  BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -185,9 +187,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration: BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -213,9 +215,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.green500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration: BoxDecoration(
+                              color: context.theme.indicatorColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -241,9 +243,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration:  BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -269,9 +271,9 @@ class _AttendanceState extends State<Attendance> {
                     Container(
                             height: 60,
                             width: 80,
-                            decoration: const BoxDecoration(
-                              color: Vx.red500,
-                              borderRadius: BorderRadiusDirectional.only(
+                            decoration: BoxDecoration(
+                              color: context.theme.hoverColor,
+                              borderRadius: const BorderRadiusDirectional.only(
                                   bottomEnd: Radius.circular(18),
                                   bottomStart: Radius.circular(18),
                                   topEnd: Radius.circular(18),
@@ -314,12 +316,12 @@ class _AttendanceState extends State<Attendance> {
                     height: 40,
                     width: 95,
                     decoration: BoxDecoration(
-                      color: Vx.blue500,
+                      color: context.canvasColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: "PDF"
                         .text
-                        .color(Vx.gray100)
+                        .color(context.theme.hintColor)
                         .size(18)
                         .bold
                         .textStyle(GoogleFonts.tiltNeon())
@@ -331,14 +333,14 @@ class _AttendanceState extends State<Attendance> {
             const HeightBox(5),
                  Card(
                   elevation: 2.0,
-                  color: Vx.gray200,
+                  color: context.theme.splashColor,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                    child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      "-Green color indicates that your attendance is okay.".text.size(22).semiBold.color(Vx.red500).textStyle(GoogleFonts.tiltNeon()).make(),
+                      "-Green color indicates that your attendance is okay.".text.size(22).semiBold.color(context.primaryColor).textStyle(GoogleFonts.tiltNeon()).make(),
                       const HeightBox(8),
-                      "-Red color indicates that your\nattendance is low.".text.size(22).semiBold.color(Vx.red500).textStyle(GoogleFonts.tiltNeon()).make(),
+                      "-Red color indicates that your\nattendance is low.".text.size(22).semiBold.color(context.primaryColor).textStyle(GoogleFonts.tiltNeon()).make(),
                     ],
                     ).p24()
                  ).p24(),
@@ -351,7 +353,7 @@ class _AttendanceState extends State<Attendance> {
                         width: 380,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: Vx.blue500),
+                            color: context.canvasColor),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -362,7 +364,7 @@ class _AttendanceState extends State<Attendance> {
                                 // const HeightBox(18),
                                 "Daily Punch Record"
                                     .text
-                                    .color(Vx.white)
+                                    .color(context.theme.hintColor)
                                     .size(25)
                                     .bold
                                     .textStyle(GoogleFonts.tiltNeon())
@@ -370,7 +372,7 @@ class _AttendanceState extends State<Attendance> {
                                     ,
                                 "Shows punch record for\ndaily sessions"
                                     .text
-                                    .color(Vx.gray100)
+                                    .color(context.theme.hintColor)
                                     .size(15)
                                     .semiBold
                                     .textStyle(GoogleFonts.tiltNeon())

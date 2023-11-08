@@ -1,4 +1,4 @@
-// ignore_for_file: file_nam, file_names
+// ignore_for_file: file_nam, file_names, deprecated_member_use
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,7 +19,7 @@ class Attendencepg extends StatefulWidget {
 
 void _showModalBottomSheet(context) {
   showModalBottomSheet(
-      backgroundColor: Vx.blue500,
+      backgroundColor: Vx.blue600,
       context: context,
       elevation: 2.0,
       shape: const RoundedRectangleBorder(
@@ -47,7 +47,7 @@ class _AttendencepgState extends State<Attendencepg> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Card(
                 elevation: 2,
-                color: Vx.gray200,
+                color: context.theme.splashColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 child: Column(
@@ -56,14 +56,14 @@ class _AttendencepgState extends State<Attendencepg> {
                     const HeightBox(10),
                     "Hey, $name!"
                         .text
-                        .color(Vx.red500)
+                        .color(context.primaryColor)
                         .size(28)
                         .textStyle(GoogleFonts.lilitaOne())
                         .make()
                         .pOnly(left: 18),
                     "$rollNo, $course, $semester-sem"
                         .text
-                        .color(Vx.gray800)
+                        .color(context.theme.errorColor)
                         .size(18)
                         .bold
                         .textStyle(GoogleFonts.tiltNeon())
@@ -81,7 +81,7 @@ class _AttendencepgState extends State<Attendencepg> {
                         width: 370,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: Vx.yellow400),
+                            color: context.cardColor),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -92,7 +92,7 @@ class _AttendencepgState extends State<Attendencepg> {
                                 // const HeightBox(18),
                                 "Attendance Record"
                                     .text
-                                    .color(Vx.white)
+                                    .color(context.theme.hintColor)
                                     .size(25)
                                     .bold
                                     .textStyle(GoogleFonts.tiltNeon())
@@ -100,7 +100,7 @@ class _AttendencepgState extends State<Attendencepg> {
                                     .pOnly(left: 10),
                                 "Shows attendence record for \ncurrent session "
                                     .text
-                                    .color(Vx.gray100)
+                                    .color(context.theme.hintColor)
                                     .size(15)
                                     .semiBold
                                     .textStyle(GoogleFonts.tiltNeon())
@@ -123,21 +123,21 @@ class _AttendencepgState extends State<Attendencepg> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 elevation: 2,
-                color: Vx.gray200,
+                color: context.theme.splashColor,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const HeightBox(20),
                     "-As per University norms,min. 90%\nattendance is compulsory"
                         .text
-                        .color(Vx.red500)
+                        .color(context.primaryColor)
                         .size(18)
                         .textStyle(GoogleFonts.lilitaOne())
                         .make()
                         .pOnly(bottom: 3, left: 15),
                     "-Maximum limit of condonation is 10%\nof total lectures delivered"
                         .text
-                        .color(Vx.red500)
+                        .color(context.primaryColor)
                         .size(18)
                         .textStyle(GoogleFonts.lilitaOne())
                         .make()
@@ -156,7 +156,7 @@ class _AttendencepgState extends State<Attendencepg> {
                             height: 150,
                             width: 130,
                             decoration: BoxDecoration(
-                                color: Vx.blue400,
+                                color: context.canvasColor,
                                 borderRadius: BorderRadius.circular(20)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -169,7 +169,7 @@ class _AttendencepgState extends State<Attendencepg> {
                                 ),
                                 "Daily punch\nrecord"
                                     .text
-                                    .color(Vx.white)
+                                    .color(context.theme.hintColor)
                                     .size(18)
                                     .bold
                                     .textStyle(GoogleFonts.tiltNeon())
@@ -183,11 +183,11 @@ class _AttendencepgState extends State<Attendencepg> {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                backgroundColor: Vx.white,
+                                backgroundColor: Vx.blue500,
                                 content: const Text(
                                   "This feature will be available soon",
                                   style:
-                                      TextStyle(color: Vx.black, fontSize: 14),
+                                      TextStyle(color: Vx.white, fontSize: 14),
                                 ),
                                 behavior: SnackBarBehavior.floating,
                                 margin: const EdgeInsets.only(bottom: 40),
@@ -201,7 +201,7 @@ class _AttendencepgState extends State<Attendencepg> {
                             height: 150,
                             width: 130,
                             decoration: BoxDecoration(
-                                color: Vx.blue400,
+                                color: context.canvasColor,
                                 borderRadius: BorderRadius.circular(20)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -214,7 +214,7 @@ class _AttendencepgState extends State<Attendencepg> {
                                 ),
                                 "Upload leave\napplication"
                                     .text
-                                    .color(Vx.white)
+                                    .color(context.theme.hintColor)
                                     .size(18)
                                     .bold
                                     .textStyle(GoogleFonts.tiltNeon())
@@ -237,7 +237,7 @@ class _AttendencepgState extends State<Attendencepg> {
                   width: 390,
                   height: 110,
                   decoration: BoxDecoration(
-                    color: Vx.red500,
+                    color: context.theme.hoverColor,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Row(
@@ -249,7 +249,7 @@ class _AttendencepgState extends State<Attendencepg> {
                         children: [
                           "Help Desk"
                               .text
-                              .color(Vx.white)
+                              .color(context.theme.hintColor)
                               .size(25)
                               .bold
                               .textStyle(GoogleFonts.tiltNeon())
@@ -257,7 +257,7 @@ class _AttendencepgState extends State<Attendencepg> {
                               .pOnly(top: 18),
                           "Report error in your attendence,\nor raise a report"
                               .text
-                              .color(Vx.gray100)
+                              .color(context.theme.hintColor)
                               .size(15)
                               .semiBold
                               .textStyle(GoogleFonts.tiltNeon())

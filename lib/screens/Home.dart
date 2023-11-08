@@ -6,9 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/AuthServices/Authentication.dart';
 import 'package:flutter_application_4/hanging_widgets/drawer_home.dart';
+import 'package:flutter_application_4/ontapscreens/notifications.dart';
 import 'package:flutter_application_4/screens/Attendencepg.dart';
 import 'package:flutter_application_4/screens/HomePage.dart';
-import 'package:flutter_application_4/screens/community.dart';
 import 'package:flutter_application_4/screens/session.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -27,47 +27,37 @@ class _HomeState extends State<Home> {
     const Homepage(),
     const Attendencepg(),
     const Session(),
-    const Community(),
+    
   ];
-  dynamic _currentindex = 1;
+  dynamic _currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Vx.white,
-        appBar: AppBar(
+        backgroundColor: context.theme.shadowColor,
+        appBar: AppBar( 
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-          title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+          backgroundColor: context.theme.secondaryHeaderColor,
+          title: "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),
+           iconTheme: IconThemeData(color: context.theme.hintColor), 
           actions: [
             InkWell(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: Vx.white,
-                      content: const Text(
-                        "No Notifications to show",
-                        style: TextStyle(color: Vx.black, fontSize: 14),
-                      ),
-                      behavior: SnackBarBehavior.floating,
-                      margin: const EdgeInsets.only(bottom: 40),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Notifications();
+                  }));
                 },
-                child: const Icon(Icons.notifications_active_outlined).px12()),
+                child:  Icon(Icons.notifications_active_outlined,color: context.theme.hintColor).px12()),
           ],
         ),
-        drawer: const HomeDrawer(),
+        drawer: HomeDrawer(),
         body: Screens[_currentindex],
         bottomNavigationBar: CurvedNavigationBar(
           height: 55,
           animationCurve: Curves.decelerate,
           animationDuration: const Duration(milliseconds: 500),
-          buttonBackgroundColor: Vx.red500,
-          backgroundColor: Colors.transparent,
-          color: const Color.fromARGB(255, 217, 45, 45),
+          buttonBackgroundColor: context.theme.secondaryHeaderColor,
+          backgroundColor: context.theme.shadowColor,
+          color: context.theme.secondaryHeaderColor,
           items: const [
             CurvedNavigationBarItem(
                 child: Icon(
@@ -93,14 +83,7 @@ class _HomeState extends State<Home> {
                 ),
                 label: 'Session',
                 labelStyle: TextStyle(color: Vx.white)),
-            CurvedNavigationBarItem(
-                child: Icon(
-                  Icons.people_alt_rounded,
-                  color: Vx.white,
-                  size: 23,
-                ),
-                label: 'Community',
-                labelStyle: TextStyle(color: Vx.white)),
+           
           ],
           onTap: (value) {
             setState(() {

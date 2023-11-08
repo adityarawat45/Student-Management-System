@@ -25,16 +25,17 @@ class _SyllabusState extends State<Syllabus> {
         builder: (context, snapshot) {
           String course = snapshot.data?.get("course") ?? " ";
           return Scaffold(
+            backgroundColor: context.theme.shadowColor,
               appBar: AppBar(
                 elevation: 0.0,
-                backgroundColor: const Color.fromARGB(255, 217, 45, 45),
+                backgroundColor: context.theme.secondaryHeaderColor,
                 title:
-                    "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+                    "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),
               ),
               body: Container(
                 height: 500,
-                decoration: const BoxDecoration(
-                  color: Vx.white,
+                decoration:  BoxDecoration(
+                  color: context.theme.shadowColor
                 ),
                 child: Card(
                         shape: const RoundedRectangleBorder(
@@ -43,7 +44,7 @@ class _SyllabusState extends State<Syllabus> {
                                 bottomStart: Radius.circular(80),
                                 topEnd: Radius.circular(80),
                                 topStart: Radius.circular(80))),
-                        color: const Color.fromARGB(255, 217, 45, 45),
+                        color: context.theme.hoverColor,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +55,7 @@ class _SyllabusState extends State<Syllabus> {
                                 .semiBold
                                 .textStyle(GoogleFonts.tiltNeon())
                                 .size(24)
-                                .color(Vx.white)
+                                .color(context.theme.hintColor)
                                 .makeCentered()
                                 .pOnly(top: 8),
                             const HeightBox(20),

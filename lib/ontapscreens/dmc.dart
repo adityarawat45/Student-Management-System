@@ -12,10 +12,11 @@ class _DmcState extends State<Dmc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.shadowColor,
       appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-          title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),),
+          backgroundColor:context.theme.secondaryHeaderColor,
+          title: "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),),
       body : SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -25,7 +26,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(
@@ -62,7 +63,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(
@@ -98,7 +99,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(
@@ -134,7 +135,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(
@@ -170,7 +171,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(
@@ -206,7 +207,7 @@ class _DmcState extends State<Dmc> {
                 height: 100,
                 width: 380,
                 decoration: BoxDecoration(
-                  color: Vx.red500,
+                  color: context.theme.hoverColor,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Row(

@@ -12,18 +12,18 @@ class _HolidaysState extends State<Holidays> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.shadowColor,
        appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(255, 217, 45, 45),
-          title: "MMDU".text.xl4.textStyle(GoogleFonts.lilitaOne()).make(),
+          backgroundColor : context.theme.secondaryHeaderColor ,
+          title: "MMDU".text.xl4.color(context.theme.hintColor).textStyle(GoogleFonts.lilitaOne()).make(),
        ),
       body: Container(
-        
-        decoration: const BoxDecoration(
-          color: Vx.white,
+        decoration: BoxDecoration(
+          color: context.theme.shadowColor,
         ),
         child : Card(shape: const RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(180),bottomStart: Radius.circular(180),topEnd: Radius.circular(30),topStart: Radius.circular(30)),),
-        color:  const Color.fromARGB(255, 217, 45, 45),
+        color:  context.theme.hoverColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
